@@ -1,0 +1,56 @@
+// Instagram CSS
+.instagram-addon {
+  background-color: $color-1;
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    padding: 2rem;
+    gap: calc(1rem + 2%);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+}
+
+
+
+.instagram-header {
+  flex: .5 1 auto;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+
+  .instagram-heading {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  a {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: $color-2;
+    font-weight: 600;
+  }
+  
+}
+
+.instagram-feed {
+  width: 70%;
+  flex: 3 1 auto;
+  order: -1;
+
+}
+
+#sb_instagram .sbi_photo:focus {
+  outline: solid 3px;
+  outline-offset: 4px;
+  transform: scale(1.05);
+}

@@ -1,0 +1,160 @@
+.full-width-text-section {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+
+  ul {
+    columns: 2;
+    -webkit-columns: 2;
+    column-gap: 20.5rem;
+    column-width: 22ch;
+
+    li {
+      font-weight: 600;
+      // color: white;
+    }
+  }
+
+  .full-width-text {
+    // max-width: 1400px;
+    // width: 80%;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @include mx-tablet {
+      width: 100%;
+      padding: calc(2rem + 2%) 2rem;
+    }
+
+    p.disclaimer {
+      padding: 2ch 0 0 2ch;
+    }
+  }
+
+  .text-section-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    transition: 0.5s;
+    margin-top: $bt-p-gap;
+
+    a {
+      min-width: 0ch;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+
+  .text-section-button:hover {
+    transform: scale(1.05);
+  }
+
+  @include mx-tablet {
+    h2 {
+      font-size: 2rem;
+      // padding: 0 2rem;
+    }
+
+    .text-section-button {
+      margin: 0 2rem;
+      @include mx-tablet {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+
+  .gform_wrapper {
+    background-color: $color-2;
+
+    h2 {
+      color: $color-1;
+    }
+
+    ::placeholder {
+      color: white;
+    }
+
+    input:not([type="submit"]) {
+      font-family: $font-fam-sans;
+      color: black !important;
+      fill: black;
+      border: none;
+      border: 1px solid white;
+      padding: 1rem !important;
+      text-transform: uppercase;
+      background-color: $color-2;
+    }
+
+    input[type="submit"] {
+      border: none;
+      background-color: $color-1;
+      padding: 1.5rem 2rem;
+      transition: ease-in-out 0.2s;
+      font-family: $font-fam-sans;
+      text-transform: uppercase;
+      color: white;
+      text-transform: uppercase;
+      transition: 0.5s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+
+      @include mx-tablet {
+        flex: 100%;
+      }
+    }
+  }
+
+  // .accordionize-me {
+  //   h3:not(:first-child) {
+  //     border-top: 2px solid $color-1;
+
+  //   }
+  // }
+
+  button {
+    background: none;
+    border: none;
+    color: $color-2;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 2rem 1rem 1rem 0;
+
+    @include mx-tablet {
+      text-align: left;
+    }
+  }
+
+  .call-out-text {
+    margin-bottom: 3rem;
+    font-weight: initial;
+    letter-spacing: initial;
+    margin: initial;
+  }
+
+  .two-col-content {
+    color: white;
+  }
+}
+
+.bg-7 .full-width-text div ul li {
+  color: black !important;
+}
+
+
+/// Popup styles for top of page
+.full-width-text-section:first-child {
+        padding-top: 10rem;
+        @include mx-tablet {
+          padding-top: 2rem;
+        }
+
+        .big-text{
+          font-size: 150%;
+        }
+}

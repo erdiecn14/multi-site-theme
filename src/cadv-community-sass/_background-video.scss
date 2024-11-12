@@ -1,0 +1,100 @@
+%background-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.background-video {
+  @extend %background-video;
+}
+
+.hero-background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: white;
+  color: black;
+}
+
+.video-sr-transcript {
+  background: white;
+  color: black;
+}
+
+.hero__background-media {
+  &:hover {
+    .video-control-button-container {
+      opacity: 1;
+    }
+  }
+  .video-control-button-container {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    z-index: 9;
+    opacity: 0;
+    transition: ease-in-out 0.2s;
+
+    @include mx-desktop {
+      opacity: 1;
+    }
+
+    button {
+      background: none;
+      border: none;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      &:hover svg {
+        fill: white;
+      }
+      &:focus {
+        outline: dashed 3px black;
+      }
+      &:focus svg {
+        fill: white;
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: rgba(white, 0.6);
+    }
+
+    .video-control-button {
+      &:hover {
+        cursor: pointer;
+      }
+      &[aria-label="play"] {
+        .pause-icon {
+          display: none;
+        }
+      }
+      &[aria-label="pause"] {
+        .play-icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    .video-control-button-container {
+      opacity: 1;
+    }
+  }
+}

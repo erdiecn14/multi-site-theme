@@ -1,0 +1,111 @@
+/* Campus Advantage Community Default Theme Styles */
+
+/* RFS Config
+ rfs-factor determines how much fonts scale based on screen size. 
+ The higher the number the more they change size 
+--------------------------------------------------------------------------------*/
+$rfs-factor: 3 !default;
+$rfs-factor: 5;
+$rfs-base-font-size: 1rem;
+
+/* All Fonts used on the site
+--------------------------------------------------------------------------------*/
+// @import 'fonts';
+
+/* ------ (some) Underscores styles ------ */
+@import "../../_s-sass/style";
+
+/* RFS responsive font sizing package uses calc() to make dynamic font scaling
+--------------------------------------------------------------------------------*/
+@import "../../node_modules/rfs/scss";
+
+/* Default Global Variables for use in all files, will be set here if not set in site-vars.scss  
+--------------------------------------------------------------------------------*/
+@import "default-vars";
+@import "typesetting";
+
+/* Global Mixins for use in all files
+    note: some mixins modified by values in global variables.
+--------------------------------------------------------------------------------*/
+@import "mixins";
+
+/*  Slick Slider
+--------------------------------------------------------------------------------*/
+@import "../third-party/accessible-slick/slick";
+@import "../third-party/accessible-slick/accessible-slick-theme";
+
+/* Magnific Popup 
+--------------------------------------------------------------------------------*/
+@import "magnific-popup";
+
+/*  Layout and Components styles for the design
+--------------------------------------------------------------------------------*/
+@import "layout-primitives";
+@import "cadv-components";
+@import "page-overrides";
+
+/* Utility classes for use on the site to override or apply specific styles.
+--------------------------------------------------------------------------------*/
+@import "util";
+
+/* Background Video SCSS  
+--------------------------------------------------------------------------------*/
+@import "background-video";
+
+/* Sal.js
+--------------------------------------------------------------------------------*/
+@import "./node_modules/sal.js/dist/sal.css";
+
+// /* All Email Campaign Styles
+// --------------------------------------------------------------------------------*/
+
+@import "../email-campaign-sass/summer-2022.scss";
+@import "../email-campaign-sass/fall-2022.scss";
+@import "../email-campaign-sass/cyber-monday-2022.scss";
+@import "../email-campaign-sass/spring-2023.scss";
+@import "../email-campaign-sass/spring-break-2023.scss";
+@import "../email-campaign-sass/summer-2023.scss";
+@import "../email-campaign-sass/renewal-2023.scss";
+@import "../email-campaign-sass/cyber-monday-2023.scss";
+@import "../email-campaign-sass/cyber-monday-2023-alt.scss";
+@import "../email-campaign-sass/spring2024.scss";
+@import "../email-campaign-sass/summer2024.scss";
+
+@media (prefers-reduced-motion) {
+	[data-sal] {
+		opacity: 1;
+		transform: initial;
+	}
+}
+
+// Added for sticky header
+
+.sticky-cta {
+	@media screen and (min-width: 800px) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		justify-content: flex-end;
+		margin-top: 0;
+
+		.menu-links-div {
+			height: 5rem;
+
+			li {
+				padding: 0;
+
+				a {
+					font-size: 1rem;
+				}
+			}
+
+			::after {
+				display: none;
+			}
+		}
+	}
+}
+
+#InlineCss_DoorwayBanner.doorway-banner-wrapper {
+	display: none !important;
+}

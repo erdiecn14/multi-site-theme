@@ -1,0 +1,25 @@
+// This is for the single post page
+
+.post-main-body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+    padding-left: 3rem;
+}
+
+.post-content{
+    width: 70%;
+}
+
+.widget-area{
+    h3{
+        margin-bottom: 2rem;
+    }
+   
+}
+
+.post-thumbnail img{
+    width: 100%;
+    object-fit: cover;
+} 

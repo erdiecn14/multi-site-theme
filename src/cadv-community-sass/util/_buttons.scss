@@ -1,0 +1,52 @@
+%button {
+  display: inline-block;
+  padding: $button-padding;
+  font-family: $button-font;
+  font-size: $button-font-size;
+  font-weight: $cta-font-weight;
+  letter-spacing: $cta-letter-spacing;
+  text-align: center;
+  text-transform: $button-text-transform;
+  transition: $button-transition;
+  &:hover {
+    transform: scale($button-hover-scale);
+    transition: $button-transition;
+  }
+  &:focus {
+    transform: scale($button-hover-scale);
+    transition: $button-transition; 
+    background-color: $color-1;
+    // box-shadow: 0 0 10px 0 rgba($color-1, .8);
+    // text-shadow: 0 0 5px rgba(black, .8);
+  }
+}
+
+.button--1 {
+  @extend %button;
+  background: $color-1;
+  color: $color-bright;
+}
+
+.button--2 {
+  @extend %button;
+  background: $color-2;
+  color: $color-bright;
+}
+
+.button--3 {
+  @extend %button;
+  background: $color-3;
+  color: $color-bright;
+}
+
+.button--4 {
+  @extend %button;
+  background: $color-4;
+  color: $color-bright;
+}
+
+.button--5 {
+  @extend %button;
+  background: $color-5;
+  color: $color-bright;
+}

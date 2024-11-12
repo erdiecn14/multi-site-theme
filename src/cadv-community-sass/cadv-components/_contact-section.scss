@@ -1,0 +1,84 @@
+.contact-image-section {
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+
+  .featured-image {
+    width: 50%;
+    padding: 3rem 5rem;
+
+    div {
+      position: relative;
+      height: auto;
+      min-height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+    }
+
+    @include mx-tablet {
+      flex: 100%;
+      padding: 1rem;
+    }
+  }
+
+  .contact-form {
+    width: 50%;
+    padding: 2rem;
+
+    @include mx-tablet {
+      width: 100%;
+    }
+
+    h2 {
+      color: $color-1;
+
+    }
+
+    input:not([type="submit"]),
+    .gfield_select {
+      font-family: $font-fam-sans;
+      border: none;
+      border: 2px solid $color-2;
+      padding: 1rem !important;
+      text-transform: uppercase;
+    }
+
+    input::placeholder {
+      color: black;
+    }
+
+    input[type="submit"] {
+      border: none;
+      background-color: $color-2;
+      padding: 1.5rem 2rem;
+      transition: ease-in-out .2s;
+      font-family: $font-fam-sans;
+      text-transform: uppercase;
+      color: white;
+      text-transform: uppercase;
+      transition: .5s;
+      font-weight: 600;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+
+      @include mx-tablet {
+        flex: 100%;
+      }
+    }
+  }
+}
+
+.gform_button[type=submit]:focus {
+  outline: solid 2px;
+  transform: scale(1.05);
+}

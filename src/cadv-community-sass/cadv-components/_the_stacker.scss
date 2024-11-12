@@ -1,0 +1,26 @@
+.the-stacker {
+  p + h3 {
+    margin-top: 0;
+  }
+  .stacker-column {
+    p strong,
+    h1 strong,
+    h2 strong,
+    h3 strong,
+    h4 strong,
+    h5 strong,
+    h6 strong {
+      @include rfs($h4-font-size);
+      text-transform: uppercase;
+      color: $color-1;
+      line-height: 0.9;
+    }
+    ul {
+      padding-left: 0 !important;
+      margin-top: $hd-ls-gap;
+      li {
+        font-weight: 400 !important;
+      }
+    }
+  }
+}

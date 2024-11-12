@@ -1,0 +1,15 @@
+.sixty-forty-section {
+  padding: calc(2rem + 2%) 2rem;
+  .content-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    // gap: calc(1rem + 2%);
+  }
+  .left-text {
+    flex-grow: 1;
+  }
+  .right-text {
+    flex-grow: 2;
+  }
+  
+}

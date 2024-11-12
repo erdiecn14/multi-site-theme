@@ -1,0 +1,124 @@
+/*
+    FONT AND TEXT RELATED VARS
+*/
+/* 
+  NOTE: using the name "body" instead of "p" in many cases because often 
+  body copy has paragraphs and lists which are styled the same
+  cannot simply use inherit on lists because they're not nested in paragraphs
+*/
+
+
+/*---------------------------------------------------------------
+    Fallback Fonts
+---------------------------------------------------------------*/
+$base-sans-stack: Helvetica, Arial, Lucida, sans-serif !default;
+$base-serif-stack: Georgia, Times, "Times New Roman", serif !default;
+$base-script-stack: Impact !default;
+
+/*---------------------------------------------------------------
+    CHANGE THESE FONTS TO MATCH THE BRAND GUIDE
+---------------------------------------------------------------*/
+$font-fam-sans: "Montserrat" !default;
+$font-fam-sans-alt: "Montserrat" !default;
+$font-fam-serif: "Georgia" !default;
+$font-fam-serif-alt: "Georgia" !default;
+$font-fam-script: "Brownhill" !default;
+
+$font-stack-sans: $font-fam-sans, $base-sans-stack;
+$font-stack-sans-alt: $font-fam-sans-alt, $base-sans-stack;
+$font-stack-serif: $font-fam-serif, $base-serif-stack;
+$font-stack-serif-alt: $font-fam-serif-alt, $base-serif-stack;
+$font-stack-script: $font-fam-script, $base-script-stack;
+
+$heading-font: $font-stack-sans !default;
+$heading-sm-font: $font-stack-sans !default;
+$heading-strong-font: $font-stack-sans !default;
+$heading-em-font: $font-stack-sans !default;
+$body-font: $font-stack-sans !default;
+$p-strong-font: $body-font !default;
+$fancy-font: $font-stack-script !default;
+$button-font: $font-stack-sans !default;
+$tagline-font: $font-stack-sans !default;
+$callout-font-small: $font-stack-sans !default;
+$callout-font-big:  $font-stack-sans-alt !default;
+
+/* ---------------------------------------------------------------
+    FONT SIZES
+      Generally these font size settings don't need to change 
+      unless site needs more dramatic font size differences 
+------------------------------------------------------------------*/
+
+$font-size-base: 1rem !default;
+
+$font-size-xxs: ($font-size-base * .5) !default;
+$font-size-xs: ($font-size-base * .65) !default;
+$font-size-sm: ($font-size-base * .875) !default;
+$font-size-med: ($font-size-base * 1) !default;
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-xl: ($font-size-base * 1.75) !default;
+$font-size-xxl: ($font-size-base * 2.25) !default;
+$font-size-xxxl: ($font-size-base * 3.25) !default;
+$font-size-huge: ($font-size-base * 5) !default;
+
+//----headings
+$headings: h1,h2,h3,h4,h5 !default;
+$h1-font-size: $font-size-xxxl !default; 
+$h2-font-size: $font-size-xxxl !default; 
+$h3-font-size: $font-size-xxl !default; 
+$h4-font-size: $font-size-xl !default;
+$h5-font-size: $font-size-lg !default;
+$h6-font-size: $font-size-base !default;
+$heading-strong-font-size: 1.5em !default;
+$heading-em-font-size: 1em !default;
+$heading-sm-font-size: .5em !default;
+
+//----body copy
+
+$body: p,li !default;
+$body-font-size: $font-size-base !default;
+$ls-font-size: $body-font-size !default;
+$featured-text-size: 2rem !default; 
+
+//----components
+$button-font-size: $font-size-base !default;
+
+//----font spacing
+$heading-letter-spacing: .15ch !default;
+$heading-line-height: 1 !default;
+
+$heading-sm-letter-spacing: .2ch !default;
+$heading-sm-line-height: 1 !default;
+
+$p-line-height: 1.75 !default;
+$ls-line-height: 1.75 !default;
+
+$cta-letter-spacing: .25ch !default;
+
+//----weights
+$font-weight-light:   300 !default;
+$font-weight-normal:  400 !default;
+$font-weight-bold:    700 !default;
+
+$heading-font-weight: 600 !default;
+$heading-strong-font-weight: $font-weight-bold !default;
+$heading-em-font-weight: $font-weight-normal !default;
+$heading-sm-font-weight: 600 !default;
+$body-font-weight: $font-weight-normal !default;
+// $p-font-weight: $font-weight-normal !default;
+$ls-font-weight: 600 !default;
+$cta-font-weight: $font-weight-bold !default;
+
+/* ---------------------------------------------------------------
+    FONT TRANSFORMS
+        transformations for different types of text
+------------------------------------------------------------------*/
+
+$featured-text-transform: uppercase !default;
+$heading-transform: uppercase !default;
+$heading-strong-transform: uppercase !default;
+$heading-em-transform: uppercase !default;
+$heading-sm-transform: uppercase !default;
+$tagline-transform: uppercase !default;
+$ls-transform: none !default;
+$bt-transform: uppercase !default;
+$button-text-transform: $bt-transform;

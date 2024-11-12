@@ -1,0 +1,34 @@
+/*--------------------------------------------------------------------------------
+        COLORS
+--------------------------------------------------------------------------------*/
+$color-1: #404041 !default; // brand primary
+$color-2: #949598 !default; // brand secondary, this is always the accent color
+$color-3: #D1D2D4 !default; // brand light backgrounds
+$color-4: #636363 !default; // brand alt 1
+$color-5: #122631 !default; // brand alt 2
+$color-6: #343434 !default; // text
+$color-7: #ffffff !default; // brightest 
+$color-8: #000000 !default; // darkest
+$color-9: #414141 !default; // lighter text
+$color-bright: $color-7 !default;
+$color-dark: $color-8 !default;
+
+$color-mute: $color-4 !default;
+$accent-color: $color-2 !default;
+
+$heading-color: $color-1 !default;
+$heading-sm-color: $color-1 !default;
+$cta-color: $color-1 !default;
+$body-link-color: $color-2 !default;
+$ls-marker-color: $color-1 !default;
+$specials-banner-bg: $color-2 !default;
+$specials-banner-color: white !default;
+$bottom-cta-bg: $color-4 !default;
+$bottom-cta-color: $color-bright !default;
+$form-section-bg: $color-2 !default;
+
+$font-color: $color-6 !default;
+$font-color-dark: black !default;
+$font-color-bright: white !default;
+
+$footer-text-color: $color-1 !default;

@@ -1,0 +1,1 @@
+<svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.933333 10.583334" height="100" width="64"><g fill="none" stroke-width="1.8"><path d="M0 .53h16.948M0 5.292h16.948M0 10.054h16.948"/></g></svg>

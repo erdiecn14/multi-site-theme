@@ -1,0 +1,139 @@
+/*
+  These classes create a layout with child elements fit on a row until the container reaches a certain width
+  and then all the child elements stack vertically.
+  gt = gutter between child elements
+  usage: 
+  the divs in the following section would be in a row with a 1.5rem gutter until the section is < $remq-sm wide (default value is 36rem)
+  once the section gets narrower than $remq-sm, the divs all stack vertically with the 1.5rem gap between them.
+  <section class="sm-cols-gt-1.5">
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
+*/
+/*
+To include this in a project add the following to device-vars and change values as needed
+$remq-xxl: 90rem;
+$remq-xl: 75rem;
+$remq-lg: 61.25rem;
+$remq-md: 48rem;
+$remq-sm: 36rem;
+$remq-xs: 20rem;
+*/
+@mixin col-gt($gutter, $breakpoint) {
+  @extend %columns;
+  gap: calc(#{$gutter} + 4%);
+  > * {
+    flex-basis: calc((#{$breakpoint} - (100% - #{$gutter})) * 999);
+  }
+}
+
+%columns {
+  display: flex;
+  flex-wrap: wrap;
+  > * {
+    flex-grow: 1;
+  }
+}
+
+.xs-cols {
+  $break: $remq-xs;
+  @extend %columns;
+  > * {
+    flex-basis: calc((#{$break} - 100%) * 999);
+  }
+  &-gt-0\.5 {
+    @include col-gt(0.5rem, $break);
+  }
+  &-gt-1 {
+    @include col-gt(1rem, $break);
+  }
+  &-gt-1\.5 {
+    @include col-gt(1.5rem, $break);
+  }
+  &-gt-2 {
+    @include col-gt(2rem, $break);
+  }
+  &-gt-2\.5 {
+    @include col-gt(2.5rem, $break);
+  }
+}
+
+.sm-cols {
+  $break: $remq-sm;
+  @extend %columns;
+  > * {
+    flex-basis: calc((#{$break} - 100%) * 999);
+  }
+  &-gt-0\.5 {
+    @include col-gt(0.5rem, $break);
+  }
+  &-gt-1 {
+    @include col-gt(1rem, $break);
+  }
+  &-gt-1\.5 {
+    @include col-gt(1.5rem, $break);
+  }
+  &-gt-2 {
+    @include col-gt(2rem, $break);
+  }
+  &-gt-2\.5 {
+    @include col-gt(2.5rem, $break);
+  }
+}
+
+.md-cols {
+  $break: $remq-md;
+  @extend %columns;
+  > * {
+    flex-basis: calc((#{$break} - 100%) * 999);
+  }
+  &-gt-0\.5 {
+    @include col-gt(0.5rem, $break);
+  }
+  &-gt-1 {
+    @include col-gt(1rem, $break);
+  }
+  &-gt-1\.5 {
+    @include col-gt(1.5rem, $break);
+  }
+  &-gt-2 {
+    @include col-gt(2rem, $break);
+  }
+  &-gt-2\.5 {
+    @include col-gt(2.5rem, $break);
+  }
+}
+
+.lg-cols {
+  $break: $remq-lg;
+  @extend %columns;
+  > * {
+    flex-basis: calc((#{$break} - 100%) * 999);
+  }
+
+  &-gt-0\.5 {
+    @include col-gt(0.5rem, $break);
+  }
+  &-gt-1 {
+    @include col-gt(1rem, $break);
+  }
+  &-gt-1\.5 {
+    @include col-gt(1.5rem, $break);
+  }
+  &-gt-2 {
+    @include col-gt(2rem, $break);
+  }
+  &-gt-2\.5 {
+    @include col-gt(2.5rem, $break);
+  }
+  &-gt-3 {
+    @include col-gt(3rem, $break);
+  }
+  &-gt-3\.5 {
+    @include col-gt(3.5rem, $break);
+  }
+  &-gt-4 {
+    @include col-gt(4rem, $break);
+  }
+}

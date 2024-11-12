@@ -1,0 +1,103 @@
+/* These styles are used across all the togglized code */
+
+$toggle-gap: 2rem;
+
+.accordionize-me,
+.togglize-me {
+  position: relative;
+  max-width: 100ch;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.full-width-text .call-out-text + .accordionize-me,
+.full-width-text .call-out-text + .togglize-me {
+  margin-top: 3rem;
+}
+
+.accordionize-me .expandable,
+.togglize-me .expandable {
+  padding-bottom: $toggle-gap;
+  ul,
+  ol {
+    padding: 0;
+  }
+  &[hidden] {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+.accordionize-me .toggle-heading,
+.togglize-me .toggle-heading {
+  @include rfs($font-size-xl);
+  margin: 0;
+  line-height: 1;
+}
+
+.accordionize-me li,
+.togglize-me li {
+  color: $font-color;
+}
+
+.accordionize-me .togglize-button,
+.togglize-me .togglize-button {
+  background: none;
+  border: none;
+  border-top: 2px solid $accent-color;
+  color: $color-1;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: 1;
+  // padding: 2rem 1rem 2rem 0;
+  padding: $toggle-gap 1rem $toggle-gap 0;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  vertical-align: text-top;
+  text-transform: uppercase;
+
+  @include mx-tablet {
+    text-align: left;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  // &:after {
+  //   content: ">";
+  //   display: inline-block;
+  //   transform: rotate(90deg);
+  //   color: $color-1;
+  //   transition: 0.5s all;
+  //   position: absolute;
+  //   right: 0;
+  // }
+
+  // &[aria-expanded="false"]:after {
+  //   transform: rotate(0);
+  // }
+}
+
+.accordionize-me .togglize-button .single-arrow,
+.togglize-me .togglize-button .single-arrow {
+  display: inline-block;
+  transform: rotate(90deg);
+  color: currentColor;
+  transition: 0.5s all;
+  position: absolute;
+  right: 0;
+}
+
+.accordionize-me .togglize-button[aria-expanded="false"] .single-arrow,
+.togglize-me .togglize-button[aria-expanded="false"] .single-arrow {
+  transform: rotate(0);
+}
+
+.accordionize-me %headings:first-of-type .togglize-button,
+.togglize-me %headings:first-of-type .togglize-button {
+  border-top: none;
+  padding-top: 0;
+}

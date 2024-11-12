@@ -1,0 +1,61 @@
+.testimonial-cards {
+  padding: calc(2rem + 2%) 2rem;
+  position: relative;
+
+  @include mx-desktop {
+    padding: 0;
+    padding: 1rem;
+  }
+
+  .content-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    // gap: calc(1rem + 2%);
+
+    @include mx-desktop {
+      flex-wrap: wrap;
+    }
+  }
+
+  .left-text {
+    flex: 1;
+    color: $color-1;
+
+    @include mx-desktop {
+      padding-top: 5rem;
+      text-align: center;
+    }
+  }
+
+  .testimonial-cards {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 1;
+
+    @include mx-desktop {
+      width: 100%;
+      flex-wrap: wrap;
+
+      .card:not(:first-child) {
+        display: none;
+      }
+    }
+
+    .card {
+      border: $color-2 1px solid;
+      padding: 2rem 3rem;
+      margin: 1rem;
+    }
+
+    .card-name {
+      p {
+        color: $color-1;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+}

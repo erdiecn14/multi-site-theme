@@ -1,0 +1,156 @@
+.blog-page-main {
+  width: 70%;
+  float: left;
+  margin-bottom: 4rem;
+
+  @include mx-tablet {
+    width: 100%;
+  }
+
+  .category-title {
+    text-align: center;
+    color: $color-1;
+  }
+}
+
+.post-header {
+  width: 100%;
+  height: 9rem;
+  background-color: transparent;
+}
+
+.widget-area {
+  width: 30%;
+  float: right;
+  padding: 0 3rem;
+
+  %headings {
+    color: $color-1;
+    @include rfs($font-size-xxl);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  li {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: $color-2;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+
+  li a {
+    padding: 2rem;
+    display: block;
+  }
+
+  li:hover {
+    transform: scale(1.05);
+  }
+
+  @include mx-tablet {
+    display: none;
+  }
+}
+
+.post-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .post-card {
+    width: 40%;
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include mx-tablet {
+      width: 100%;
+    }
+
+    .card-copy h2 {
+      color: $color-2;
+      margin: 1rem 0;
+      font-size: 2.5rem;
+    }
+
+    .post-thumbnail {
+      img {
+        min-height: 150px;
+        object-fit: cover;
+
+        @include mn-desktop {
+          height: 15vw;
+        }
+      }
+    }
+
+    .entry-content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cta-wrapper {
+      color: $color-1;
+      font-weight: 600;
+      padding: 1rem 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.post-card .pseudo-cta {
+  @extend a;
+  transition: ease-in-out .2s;
+  position: relative;
+  display: inline-block;
+}
+
+.post-card:focus-within {
+  outline: solid 4px $color-1; 
+  outline-offset: 3px;
+}
+
+.post-card:hover .pseudo-cta {
+  transform: scale(1.05);
+  
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: currentColor;
+  }
+}
+
+.post-card a.overlay-link:focus {
+  outline: none;
+}
+
+.post-card .overlay-link:after {
+  content: '';
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  display: block;
+}
+
+.category .full-width-text-section {
+  display: none;
+}
+
+.category .site-main, .category aside {
+  margin-top: 4rem;
+}

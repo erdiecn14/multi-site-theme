@@ -1,0 +1,34 @@
+.background-pattern-left{
+    position: absolute;
+    bottom: 0;
+    width: 27vw;
+    z-index: -1;
+    left: 0;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @include mx-desktop{
+        display: none;
+    }
+}
+
+.background-pattern-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    transform: rotateX(180deg);
+    z-index: -1;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @include mx-desktop{
+        display: none;
+    }
+}

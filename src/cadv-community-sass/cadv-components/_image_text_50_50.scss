@@ -1,0 +1,66 @@
+.image-text-50-50-section {
+  $section-gap: 5%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $section-gap;
+  margin-bottom: -2rem;
+  padding: 3rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include mx-tablet {
+    padding: 0;
+  }
+
+  .main-image {
+    flex: 1 1 calc(50% - #{$section-gap});
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include mx-tablet {
+      flex: 100%;
+    }
+  }
+
+  .copy-section{
+    flex: 1 1 calc(50% - #{$section-gap});
+
+    @include mx-tablet {
+      padding: 2rem;
+      flex: 100%;
+    }
+  }
+
+  .toggle-section {
+    border-bottom: 2px solid $color-2;
+  }
+
+  .text-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    transition: .5s;
+
+    a {
+      min-width: 2ch;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: white;
+    }
+  }
+
+  .toggle-section + .toggle-section {
+    margin-top: 2rem;
+  }
+
+  .text-button:hover {
+    transform: scale(1.05);
+  }
+
+}

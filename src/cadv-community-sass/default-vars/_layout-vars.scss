@@ -1,0 +1,58 @@
+//----layout sizes and spacing
+
+// max width for rows with mixed content that needs to be constrained for optimimum reading
+// todo: shoud this be flex row max width?
+$content-row-max-width: 1400px !default;
+
+$body-max-width: 90ch !default;
+$body-min-width: 20ch !default;
+$text-gutter: 30px !default;
+
+$ls-padding: 0 0 0 2ch !default;
+
+// spacing between multiple paragraphs
+$p-p-gap: 1ex !default;
+
+// spacing between paragraph and list
+$p-ls-gap: 1ex !default;
+
+// default spacing under headings
+$hd-bottom-gap: 1.5ex !default;
+
+// spacing between headings and paragraphs
+$hd-p-gap: 1.5ex !default;
+
+// spacing between heading and list
+$hd-ls-gap: 2ex !default;
+
+// spacing between heading and subhead
+$hd-hdsm-gap: 1ex !default;
+
+// spacing between a subhead and a paragraph
+// todo: how to make this relative to the heading font size if needed? 
+
+$hdsm-bottom-gap: 1.5ex !default;
+
+// do all heading/subhead adjacent combos need to be wrapped and font size applied to wrapper? 
+$hdsm-p-gap: 1ex !default;
+
+$hdsm-ls-gap: 1ex !default;
+
+// spacing between button (actual or as appearance) and paragraph
+$bt-p-gap: 3ex !default;
+
+// spacing between button (actual or as appearance) and heading
+$bt-h-gap: 1ex !default;
+
+// spacing between multiple buttons  (actual or as appearance)
+$bt-bt-gap: 1rem !default;
+
+$button-padding: 1em !default;
+
+// lists
+$ls-li-gap: .75em !default;
+
+// headers
+$top-header-top-padding: 40px;
+$top-header-side-padding: 60px;
+

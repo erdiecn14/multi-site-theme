@@ -1,0 +1,96 @@
+.filters {
+  padding: 2rem;
+  z-index: 9;
+  max-width: 1400px;
+  margin: 0 auto;
+  @include mx-desktop {
+    padding: 1rem 2rem;
+  } 
+  
+  h2 {
+    flex-basis: 100%;
+  }
+  
+  button {
+    @extend %button;
+    border: none;
+    background:  $accent-color;
+    color: $color-bright;
+    position: relative;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:focus:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: solid 2px $color-1;
+      outline: none;
+    }
+    @include mx-desktop {
+      padding: .5rem;
+    }
+    
+  }
+  button[aria-pressed="true"]:after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    background: $color-1;
+    height: 5px;
+    display: block;
+    bottom: -.25rem;
+    left: 0;
+  }
+  select {
+    border: none;
+    background: $color-1;
+    color: $color-2;
+    font-family: $button-font;
+    font-weight: 500;
+    font-size: 1rem;
+    flex: 2 1 30ch;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    padding: .5em 1em;
+    margin: .5rem;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px 0 rgba(0,0,0,.8);
+    }
+    option {
+      font-family: $button-font;
+      font-weight: 500;
+      font-size: 1rem;
+      color: $color-1;
+    }
+  }
+  
+}
+
+#filterable-content-section {
+  // scroll-margin-top: 92px;
+  padding-top: 92px;
+  margin-top: -92px;
+  .wrapper {
+    margin-top: 3rem;
+  }
+}
+
+.button-grid {
+  @include grid(1rem,24ch);
+  button {
+    @include mn-tablet {
+      white-space: nowrap;
+    }
+  }
+}

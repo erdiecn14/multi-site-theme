@@ -1,0 +1,64 @@
+.right {
+  justify-content: flex-end;
+  // flex-direction: row-reverse;
+}
+
+.two-pane-gallery {
+  position: relative;
+  padding-bottom: 20px;
+  // height: 30rem;
+  display: flex;
+  margin-bottom: -1px;
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 75%;
+    gap: 1rem;
+  }
+  .row.right {
+    flex-direction: row-reverse;
+  }
+  .big-image {
+    flex: 56 1 auto;
+    width: 47%;
+    height: 20rem;
+    @include mx-tablet {
+      // flex:100;
+      justify-content: flex-start;
+      width: 100%;
+    }
+  }
+  .small-image {
+    flex: 19 1 auto;
+    width: 23%;
+    height: 20rem;
+    animation: slide 0.5s forwards;
+    animation-delay: 2s;
+    left: -100px;
+
+    @keyframes small-image {
+      100% {
+        left: 0;
+      }
+    }
+    @include mx-tablet {
+      // flex:100;
+      justify-content: flex-start;
+      width: 100%;
+      height: 300px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@include mx-tablet {
+  .two-pane-gallery .row {
+    width: 100%;
+  }
+}

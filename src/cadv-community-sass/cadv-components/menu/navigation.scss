@@ -1,0 +1,408 @@
+// body.menu-open {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+// }
+
+.menu-item {
+  margin-right: 3ch;
+  letter-spacing: 0.1ch;
+  font-family: $button-font;
+  // font-size: 1.5rem;
+  padding: 0.5rem;
+  font-weight: 400;
+  @include rfs($font-size-xl);
+  position: relative;
+  @include mx-desktop {
+    margin: 0;
+    padding: 0;
+    & + & {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.menu-item-has-children {
+  @include mn-desktop {
+    padding-right: 2ch;
+    &:hover {
+      .sub-menu {
+        opacity: 1;
+        height: auto;
+        transform: rotateY(0);
+        li {
+          transform: translateY(0);
+        }
+      }
+    }
+    & > a:after {
+      content: "^";
+      display: block;
+      position: absolute;
+      font-size: 1.5em;
+      right: 0;
+      top: 0.85ex;
+      width: 0.5em;
+      height: 0.5em;
+      transform: rotateX(180deg);
+    }
+  }
+  @include mx-desktop {
+    padding: 0 30px;
+    > a {
+      display: block;
+      padding: 1em 30px;
+    }
+  }
+}
+
+.sub-menu {
+  display: -ms-flexbox;
+  -ms-flex-pack: end;
+  -ms-flex-flow: column;
+  display: flex;
+  font-family: $button-font;
+  justify-content: flex-end;
+  flex-flow: column;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 2ch;
+  text-transform: uppercase;
+  color: $color-3;
+  width: 240px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  transform: rotateY(90deg);
+  z-index: 10;
+  @include mx-desktop {
+    color: white;
+    height: auto;
+    opacity: 1;
+    transform: none;
+    position: relative;
+    left: auto;
+    right: auto;
+    width: auto;
+    padding: 0;
+  }
+}
+
+.sub-menu .menu-item {
+  padding: 0.5em 1em;
+  background: white;
+  transform: translateY(-100%);
+  transition: ease-in-out 0.3s;
+  &:hover {
+    background: $color-7;
+  }
+  @include mx-desktop {
+    transform: none;
+    background: transparent;
+    margin: 0;
+    padding: 1em 30px;
+  }
+}
+
+$top-menu-height: 146px;
+$site-header-margin: 1rem;
+$mobile-site-header-v-padding: 1rem;
+
+/*
+  <header> = .site-header
+  .top-bar-contact = short menu above the main menu
+  .top-logo = logo next to main menu
+  .main-navigation = main menu across top of site and slide down drawer on mobile
+  */
+
+#page {
+  position: relative;
+  overflow-x: hidden; /// Fixes menu visability
+}
+
+#page.mobile-menu-toggled {
+  padding-top: calc(60px + 2rem);
+  // .site-header {
+  //   position: fixed;
+  //   width: 100%;
+  //   top: 0;
+  // }
+}
+
+// .site-header {
+//   background: $color-1;
+//   z-index: 999;
+//   padding: $mobile-site-header-v-padding 0;
+//   position: sticky;
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+//   @include mn-desktop {
+//     padding: 1.25rem 2rem;
+//     z-index: 10;
+//   }
+// }
+
+// .site-header > .wrapper {
+//   display: flex;
+//   justify-content: space-around;
+//   @include mx-desktop {
+//     height: 60px;
+//     width: 100%;
+//   }
+//   @include mn-desktop {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     align-items: flex-end;
+//     margin: calc(#{$site-header-margin} / 2 * -1);
+//     > * {
+//       margin: calc(#{$site-header-margin} / 2);
+//       flex-grow: 1;
+//     }
+//   }
+// }
+
+// .admin-bar {
+//   .site-header {
+//     top: 32px;
+//   }
+// }
+
+.main-navigation {
+  // <nav>
+  font-family: $font-stack-sans;
+  font-weight: $font-weight-bold;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background: rgba(250, 247, 246, 0.88);
+  // z-index: 5;
+  z-index: 10;
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.navbarOffsetMargin {
+  padding-top: 45px;
+}
+
+.nav-menu-wrapper {
+  z-index: 5;
+  background: #ffffff;
+  display: -ms-flexbox;
+  -ms-flex-direction: column-reverse;
+  -ms-flex-pack: end;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding-top: 100px;
+  padding-bottom: 10rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  transform: translateX(102%);
+  transition: ease-in-out 0.4s;
+  height: 100vh;
+  visibility: hidden;
+
+  @include mx-desktop {
+    width: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  a {
+    color: $color-1;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  // toggle button pressed (only happens on mobile)...
+  .main-navigation.toggled & {
+    transform: translateX(0);
+    align-items: center;
+    // width: 40vw;
+    box-shadow: (0 0 0.5rem black);
+    visibility: visible;
+    
+    @include mx-phone {
+      padding-top: 45%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .nav-menu-wrapper {
+    transition: none;
+  }
+}
+
+.main-menu {
+  padding: 0;
+  transform: none;
+  text-transform: uppercase;
+
+  $nav-link-margin: 2rem;
+  // @extend %site-header-menu;
+  @include mn-desktop {
+    margin: calc(#{$nav-link-margin} / 2 * -1);
+    // padding-top:2rem;
+    line-height: 1.5;
+    font-size: $font-size-med;
+    li {
+      margin: calc(#{$nav-link-margin} / 2);
+      margin: 0;
+      padding: 0;
+      // text-shadow: 0 0 15px rgb(0 0 0 / 80%);
+      text-transform: uppercase;
+    }
+    a:focus {
+      position: relative;
+      border-bottom: 1px solid white;
+      &:after {
+        content: "";
+        height: 2px;
+        bottom: -1rem;
+        display: block;
+        width: 100%;
+        position: absolute;
+        // background: white;
+      }
+    }
+  }
+  @include mx-desktop {
+    .menu-link-standout {
+      // background: $color-2;
+      margin-bottom: 0.5rem;
+      a {
+        font-weight: bold;
+      }
+    }
+    a {
+      padding: 1rem;
+      &:focus {
+        box-shadow: 0 0 10px 0 rgba(white, 0.8);
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+.top-logo-desktop {
+  max-width: min(30vw, 250px);
+  position: absolute;
+  height: 100%;
+  width: auto;
+  z-index: 20;
+  margin: 0 0 0 3rem;
+  padding: 0.75rem 0;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  &:focus-within:after,
+  &:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    outline: none;
+  }
+}
+
+// page has scrolled...
+.site-header.compress .top-logo {
+  @include mn-desktop {
+    max-height: 3rem;
+    max-width: 12rem;
+  }
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+#primary-nav-toggle {
+  display: block;
+  z-index: 20;
+  stroke: $color-6;
+  background: transparent;
+  border: none;
+  margin-right: 5%;
+  padding: 2.5rem 1rem;
+
+  @include mx-tablet {
+    padding: 1rem;
+    position: relative;
+  }
+}
+
+.hamburger-svg svg {
+  // height: 30px;
+  // width: 30px;
+  height: 1.875rem;
+  width: 1.875rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+
+  .main-nav-cta, .nav-phone {
+    color: $color-1;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    // padding: 1rem;
+    @include mx-tablet {
+      display: none;
+    }
+    
+  }
+  .nav-phone{
+    font-weight: 400 !important
+  }
+}
+
+/// These rules are the rules that make the menu sticky, they were added after devlopment,
+// they are here to make it easy to change in the future, added april 2022
+
+// .menu-toggle {
+//   position: fixed;
+// }
+
+// .main-nav-cta {
+//   margin-right: 8rem;
+// }
+
+#specials-banner {
+  width: 100%;
+  // position: fixed;
+}
+
+// .main-navigation {
+//   margin-top: 4rem;
+// }

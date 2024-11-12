@@ -1,0 +1,42 @@
+/*
+  Mixin for easy grid generation with custom sizing
+  usage:
+  the following scss would result in a grid layout with a gap between child elements of 2rem
+  and child elements will sit on the same row as long as they can be at least 600px wide
+  in a container less than 600px wide the child elements will be 1 per row and fill whatever space is available
+  .my-card-grid {
+    @include grid(2rem, 600px);
+  }
+*/
+@mixin grid($child-gutter, $child-min-width) {
+  display: grid;
+  grid-gap: $child-gutter;
+  grid-template-columns: repeat(auto-fit, minmax(min(#{$child-min-width}, 100%), 1fr));
+}
+
+// Readymade classes for common use
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+}
+
+.grid-1\.5 {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+}
+
+.grid-2 {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+}
+
+.grid-2\.5 {
+  display: grid;
+  grid-gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+}
+
+

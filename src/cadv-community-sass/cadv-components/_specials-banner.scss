@@ -1,0 +1,154 @@
+@keyframes arrowshift {
+	0% {
+		// right: -1.5rem; 
+		right: -.5rem;
+	}
+
+	50% {
+		// right: -1rem;
+		right: 0;
+	}
+
+	100% {
+		// right: -1.5rem;
+		right: -.5rem;
+	}
+}
+
+@keyframes buttonpulse {
+	from {
+		transform: scale(1);
+	}
+
+	to {
+		transform: scale(1.05);
+	}
+}
+
+main article {
+	position: relative;
+}
+
+.specials-banner {
+	background: $specials-banner-bg;
+	color: $color-bright;
+	padding: calc(.5rem + 1%) 1rem;
+	// position: relative;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 9;
+	// z-index: 11;
+
+	// teaser text when there is no button
+	.banner-teaser {
+		@extend %headings;
+		@include rfs($font-size-lg);
+		background: transparent;
+		border: none;
+		display: block;
+		// color: $color-bright;
+		margin: 0 auto;
+		font-family: $heading-font;
+		text-transform: uppercase;
+		text-align: center;
+		position: relative;
+		padding: 0;
+	}
+
+	.banner-button {
+		@extend %headings;
+		@include rfs($font-size-lg);
+		background: transparent;
+		border: none;
+		display: block;
+		// color: $color-bright;
+		margin: 0 auto;
+		font-family: $heading-font;
+		text-transform: uppercase;
+		position: relative;
+		padding: 0;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:focus {
+			outline: solid 2px currentColor;
+		}
+
+		.single-arrow {
+			display: inline-block;
+			position: relative;
+			transform: rotate(90deg);
+			color: inherit;
+			transition: .5s all;
+			margin-left: .5rem;
+			// position: absolute;
+			// right: -1.5rem;   
+		}
+
+		&[aria-expanded="false"] .single-arrow {
+			transform: rotate(0);
+			animation: arrowshift infinite 1s;
+		}
+
+		// &:after {
+		//   content: '>';
+		//   display: inline-block;
+		//   transform: rotate(90deg);
+		//   color: inherit;
+		//   transition: .5s all;
+		//   position: absolute;
+		//   right: -1.5rem;
+		// }
+
+		// &[aria-expanded="false"]:after {
+		//   transform: rotate(0);
+		//   animation: arrowshift infinite 1s;
+		// }
+
+		@media (prefers-reduced-motion) {
+
+			// &[aria-expanded="false"]:after {
+			//   animation: none;
+			// }
+			&[aria-expanded="false"] .single-arrow {
+				animation: none;
+			}
+		}
+	}
+
+	.specials-content-section {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		// background: $accent-color;
+		background: inherit;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0 2rem 2rem;
+		top: 100%;
+		opacity: 1;
+		transition: opacity ease-in-out .2s;
+
+		&[hidden] {
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		.button--1 {
+			animation: buttonpulse alternate infinite .5s;
+		}
+
+		@media (prefers-reduced-motion) {
+			.button--1 {
+				animation: none;
+			}
+		}
+
+	}
+
+}

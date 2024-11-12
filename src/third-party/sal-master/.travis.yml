@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+  - lts/erbium
+script:
+  - npm run build
+  - npm run test

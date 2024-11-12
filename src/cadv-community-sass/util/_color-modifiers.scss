@@ -1,0 +1,173 @@
+/*--------------------------------------------------------------------------------
+    BACKGROUND COLORS
+--------------------------------------------------------------------------------*/
+
+.bg-w,
+.background-w {
+  background: white;
+}
+.bg-1,
+.background-1 {
+  background-color: $color-1;
+  h1,
+  h2 {
+    color: white;
+    em {
+      color: $color-8;
+    }
+  }
+  // h3 {
+  //   color: $color-bright !important;
+  // }
+  p {
+    color: $color-7;
+  }
+  a {
+    color: white;
+  }
+  li {
+    color: $color-bright;
+  }
+}
+.bg-2,
+.background-2 {
+  background-color: $color-2;
+  h1,
+  h2 {
+    // color: $color-2;
+    em {
+      color: $color-bright;
+    }
+  }
+  p {
+    color: $color-7;
+  }
+  // li:not(:last-child) {
+  //   border-right: 2px solid $color-1;
+  //   }
+
+  a {
+    color: white;
+  }
+}
+.bg-bright {
+  background-color: $color-bright;
+}
+.bg-3,
+.backgrond-3 {
+  background-color: $color-3;
+}
+.bg-4,
+.background-4 {
+  background-color: $color-4;
+}
+.bg-5,
+.background-5 {
+  background-color: $color-5;
+  h1,
+  h2 {
+    color: $color-2;
+    em {
+      color: $color-9;
+    }
+  }
+}
+.bg-6,
+.background-6 {
+  background-color: $color-6;
+}
+.bg-7,
+.background-7 {
+  background-color: $color-7;
+}
+.bg-8,
+.background-8 {
+  background-color: $color-8;
+  h1,
+  h2 {
+    color: $color-2;
+    em {
+      color: $color-9;
+    }
+  }
+}
+.bg-9,
+.background-9 {
+  background-color: $color-9;
+}
+
+.bg-10 {
+  h1,
+  h2 {
+    color: $color-2;
+    em {
+      color: $color-1;
+    }
+  }
+}
+
+.bg-7bg-1 {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, transparent 48%, $color-1 48%);
+}
+
+.bg-7bg-2 {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, transparent 48%, $color-2 48%);
+}
+
+.bg-2bg-7 {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, $color-2 48%, transparent 48%);
+}
+
+/*--------------------------------------------------------------------------------
+    COLORS
+--------------------------------------------------------------------------------*/
+
+.color-1 {
+  color: $color-1;
+}
+.color-2 {
+  color: $color-2;
+}
+.color-3 {
+  color: $color-3;
+}
+.color-4 {
+  color: $color-4;
+}
+.color-5 {
+  color: $color-5;
+}
+.color-6 {
+  color: $color-6;
+}
+.color-7 {
+  color: $color-7;
+}
+.color-8 {
+  color: $color-8;
+}
+.color-9 {
+  color: $color-9;
+}
+
+/*--------------------------------------------------------------------------------
+    HEADING COLORS
+--------------------------------------------------------------------------------*/
+.h-1 {
+  color: $color-1;
+}
+
+.h-2 {
+  color: $color-2;
+}
+
+.h-3 {
+  color: $color-3;
+}
+
+.h-4 {
+  color: $color-4;
+}

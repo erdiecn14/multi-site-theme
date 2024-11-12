@@ -1,0 +1,262 @@
+// /*!
+// Theme Name: CADV Student Community
+// Theme URI: http://underscores.me/
+// Author: Catalyst
+// Author URI: https://thelyst.com
+// Description: Student Housing Community Website
+// Version: 1.0.0
+// Tested up to: 5.4
+// Requires PHP: 5.6
+// License: GNU General Public License v2 or later
+// License URI: LICENSE
+// Text Domain: cadv-community
+// Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+// This theme, like WordPress, is licensed under the GPL.
+// Use it to make something cool, have fun, and share what you've learned.
+
+// CADV Student Community is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+// Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+// Normalizing styles have been helped along thanks to the fine work of
+// Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+// */
+
+// /* All Fonts used on the site
+// --------------------------------------------------------------------------------*/
+@import 'fonts';
+
+// // /*--------------------------------------------------------------------------------
+// //         COLORS
+// // --------------------------------------------------------------------------------*/
+$color-1: #6D7A59;
+$color-2: #D64224; //<-- This is always the accent color
+$color-3: #C9DAD9;
+// $color-4: #343434;
+// $color-5: #122631;
+// $color-6: #343434;
+// $color-7: #FFFFFF; 
+// $color-8: #000000;
+// $color-9: #414141;
+// $color-bright: white;
+// $color-dark: black;
+
+// $accent-color: $color-2 !default;
+
+// $color-mute: $color-4;
+
+// $heading-color: $color-3;
+// $heading-sm-color: $color-3;
+
+// $cta-color: $color-1;
+// $body-link-color: $color-2;
+// $ls-marker-color: $color-4;
+// $special-banner-bg: $color-2;
+// $specials-banner-color: white;
+// $bottom-cta-bg: $color-4;
+// $bottom-cta-color: $color-bright;
+// $form-section-bg: $color-2;
+
+// $font-color: $color-6;
+// $font-color-dark: black;
+// $font-color-bright: white;
+
+// $footer-text-color: $color-1;
+
+// /*--------------------------------------------------------------------------------
+//           THEME BASE FONTS
+//           Options:
+//           - font-fam-sans
+//           - font-fam-sans-alt
+//           - font-fam-serif
+//           - font-fam-serif-alt
+//           - font-fam-script
+// --------------------------------------------------------------------------------*/
+
+$font-fam-sans: "Poppins";
+$font-fam-sans-alt: "Big Noodle";
+// $font-fam-serif: "Copperplate";
+// $font-fam-serif-alt: "Courier";
+// $font-fam-script: "Brush Script";
+
+// /*--------------------------------------------------------------------------------
+//    COMMON ELEMENT FONT ASSIGNMENTS
+//    - use $font-stack-xxx to assign fonts with fallbacks
+// --------------------------------------------------------------------------------*/
+
+// $heading-font: $font-fam-sans;
+// $heading-strong-font: $font-fam-sans-alt;
+// $heading-sm-font: $font-fam-sans;
+// $copy-font: $font-fam-sans;
+// $button-font: $font-fam-sans;
+// $tagline-font: $font-fam-sans;
+
+// /*--------------------------------------------------------------------------------
+//       FONT SIZES
+// --------------------------------------------------------------------------------*/
+
+// $font-size-base: 1rem;
+
+// $font-size-xxs: ($font-size-base * .5);
+// $font-size-xs: ($font-size-base * .65);
+// $font-size-sm: ($font-size-base * .875);
+// $font-size-med: ($font-size-base * 1);
+// $font-size-lg: ($font-size-base * 1.25);
+// $font-size-xl: ($font-size-base * 1.75);
+// $font-size-xxl: ($font-size-base * 2.5);
+// $font-size-xxxl: ($font-size-base * 3.25);
+// $font-size-huge: ($font-size-base * 5);
+
+// //----headings
+// $h1-font-size: $font-size-xl; 
+// $h2-font-size: $font-size-xl; 
+// $h3-font-size: $font-size-lg; 
+// $h4-font-size: $font-size-xl;
+// $h5-font-size: $font-size-lg;
+// $h6-font-size: $font-size-base;
+// $heading-strong-font-size: 150%;
+
+// //----copy
+// $body-font-size: $font-size-base;
+// $ls-font-size: $font-size-base;
+// $featured-text-size: 200%;
+
+// //----components
+// $button-font-size: $font-size-base;
+
+// //----font spacing
+// $heading-letter-spacing: auto;
+// $heading-line-height: 1;
+
+// $heading-sm-letter-spacing: auto;
+// $heading-sm-line-height: 1;
+
+// $p-line-height: 2;
+// $ls-line-height: 5;
+
+// /*--------------------------------------------------------------------------------
+//       FONT WEIGHTS
+// --------------------------------------------------------------------------------*/
+
+// $font-weight-light:   300;
+// $font-weight-normal:  400;
+// $font-weight-bold:    700;
+
+// $heading-font-weight: $font-weight-bold;
+// $heading-strong-font-weight: $font-weight-bold;
+// $heading-sm-font-weight: $font-weight-normal;
+// $body-font-weight: $font-weight-normal;
+// $p-font-weight: $font-weight-normal;
+// $ls-font-weight: $body-font-weight;
+// $cta-font-weight: $font-weight-bold;
+
+// /* ---------------------------------------------------------------
+//     FONT TRANSFORMS
+//         transformations for different types of text
+// ------------------------------------------------------------------*/
+
+// $featured-text-transform: uppercase;
+// $heading-transform: uppercase;
+// $heading-strong-transform: none;
+// $heading-sm-transform: uppercase;
+// $ls-transform: none;
+// $bt-transform: uppercase;
+
+// /*--------------------------------------------------------------------------------
+//       LAYOUT SIZES
+// --------------------------------------------------------------------------------*/
+
+// $content-row-max-width: 1400px;
+
+// $text-vertical-spacing: 3rem;
+// $body-max-width: 90ch;
+// $body-min-width: 30ch;
+// $text-gutter: 30px;
+
+// // lists
+// $ls-padding: 0 0 0 2ch;
+
+// // headings
+// $top-header-top-padding: 40px;
+// $top-header-side-padding: 60px;
+
+
+
+// //----layout sizes and spacing
+
+// // max width for rows with mixed content that needs to be constrained for optimimum reading
+// $content-row-max-width: 1400px;
+
+// // spacing between multiple paragraphs
+// $p-p-gap: 1ex;
+
+// // spacing between paragraph and list
+// $p-ls-gap: 1ex;
+
+// // spacing between headings and paragraphs
+// $hd-p-gap: 1.5ex;
+
+// // spacing between heading and list
+// $hd-ls-gap: 1ex;
+
+// // spacing between heading and subhead 
+// $hd-hdsm-gap: 1ex;
+
+// // spacing between a subhead and a paragraph
+// $hdsm-p-gap: 1ex;
+
+// // spacing between button (actual or as appearance) and paragraph
+// $bt-p-gap: 1ex;
+
+// // spacing between button (actual or as appearance) and heading
+// $bt-h-gap: 1ex;
+
+// // spacing between multiple buttons  (actual or as appearance)
+// $bt-bt-gap: 1rem;
+
+// // lists
+// $ls-li-gap: .5em;
+
+
+// // Weird white space was showing up, this should help - CE, 10-13-21
+// // .site{
+// //       overflow: hidden
+// // }
+
+
+// Added
+$font-fam-script: "Big Noodle";
+
+$heading-font: $font-fam-sans;
+
+$callout-font-big: $font-fam-script;
+
+$callout-font-small: $heading-font;
+
+
+@import 'cadv-community-sass/cadv-community.scss';
+
+
+
+#primary-nav-toggle{
+    stroke: $color-1 !important;
+}
+
+.menu-item{
+    font-weight: 400;
+}
+
+.nav-menu-wrapper ul#primary-menu.nav-menu li.mobile-only.button--2 a {
+    color: #ffffff;
+}
+
+.full-width-text-section a {
+    text-decoration: underline;
+}
+
+// Reduce Motion for parallax //
+@media (prefers-reduced-motion: reduce) {
+     .parallax {
+        background-attachment: initial;
+    }
+}

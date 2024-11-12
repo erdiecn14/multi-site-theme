@@ -1,0 +1,181 @@
+.cta-menu-section {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 3;
+
+  @include mn-desktop {
+    margin-top: -5rem;
+  }
+
+  @include mx-tablet {
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    z-index: 999;
+  }
+}
+
+.cta-menu-section ul {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 10rem;
+  align-items: center;
+
+  @include mx-desktop {
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    height: auto;
+    padding: 1rem 0;
+    
+    ::after {
+      display: none;
+    }
+  }
+  
+  @include mx-tablet {
+    gap: .5rem;
+  }
+
+  @media only screen and (min-width: 667px) and (max-width: 768px) and (orientation: portrait) {
+    gap: 1rem;
+  }
+
+  @media only screen and (min-width: 667px) and (max-width: 768px) and (orientation: landscape) {
+    gap: 1rem;
+  }
+}
+
+.cta-menu-section a {
+  display: inline-block;
+  font-size: 1.75rem;
+  color: white;
+  min-width: 8ch !important;
+  margin-left: 1.25rem;
+  text-transform: uppercase;
+  align-items: center;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  position: relative;
+  font-weight: 600;
+  width: 16rem;
+  line-height: 1.5;
+  transition: 0.5s;
+  
+
+
+  @include mx-tablet {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 0px;
+    width: auto;
+    padding: 0px;
+  }
+}
+
+.cta-menu-section a:hover {
+  transform: scale(1.05);
+  
+  @media (prefers-reduced-motion) {
+    transform: none;
+    &:after {
+      content: '';
+      display: block;
+      height: 5px;
+      background: currentColor;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -5px;
+    }
+  }
+}
+
+// .cta-menu-section a::after {
+//   content: ">>";
+//   animation: arrowshift infinite 1s;
+//   display: inline;
+//   position: relative;
+//   transform: rotate(0);
+//   transition: 0.5s all;
+
+//   @include mx-phone {
+//     display: none;
+//   }
+// }
+
+.cta-menu-section svg {
+  width: .7em;
+  fill: white;
+  vertical-align: middle;
+}
+
+.cta-menu-section .double-arrows {
+  animation: arrowshift infinite 1s;
+  display: inline;
+  position: relative;
+  transform: rotate(0);
+  transition: 0.5s all;
+  @media (prefers-reduced-motion) {
+    animation: unset;
+  }
+  
+  @include mx-tablet {
+    display: none;
+  }
+}
+
+.cta-menu-section li {
+  padding: 0;
+  margin: 0;
+  padding-top: 1rem;
+
+  @include mx-tablet {
+    padding-top: 0;
+  }
+}
+
+
+
+.cta-menu-section li:not(:last-child) {
+  border-right: 2px solid $color-2;
+
+  @include mx-desktop {
+    padding-top: 0.5rem;
+  }
+  
+  @include mx-tablet {
+    padding-right: .5rem;
+  }
+
+  @media only screen and (min-width: 667px) and (max-width: 768px) and (orientation: portrait) {
+    padding-right: 1rem;
+  }
+
+  @media only screen and (min-width: 667px) and (max-width: 768px) and (orientation: landscape) {
+    padding-right: 1rem;
+  }
+}
+
+.cta-menu-section .bg-2,
+.cta-menu-section .background-2 {
+  li:not(:last-child) {
+    border-right: 2px solid $color-1;
+  }
+}
+
+.cta-menu-section a p:not(:first-child) {
+  display: block;
+}
+
+@include mx-phone {
+  .cta-menu-section a p {
+    border: none;
+    min-width: 100% !important;
+  }
+}

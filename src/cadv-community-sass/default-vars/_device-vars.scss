@@ -1,0 +1,15 @@
+//-- Breakpoint Values for Devices
+$ultrawide-width: 1440px !default;
+$wide-width: 1200px !default;
+$desktop-width: 981px !default;
+$tablet-width: 768px !default;
+$phone-width: 576px !default;
+
+//-- Font Size relative breakpoint values, 
+//---- typically for container queries
+$remq-xxl: 90rem;
+$remq-xl: 75rem;
+$remq-lg: 61.25rem;
+$remq-md: 48rem;
+$remq-sm: 36rem;
+$remq-xs: 20rem;

@@ -1,0 +1,364 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#hide-me {
+  display: none;
+}
+/*--------------------------------------------------------------------------------
+    SPACING UTILS
+--------------------------------------------------------------------------------*/
+.no-pad {
+  padding: 0;
+}
+.no-pad-left {
+  padding-left: 0;
+}
+.no-marg {
+  margin: 0;
+}
+
+.mobile\:full-bleed {
+  @include mx-desktop {
+    padding: 0;
+  }
+}
+
+.desk\:section-pad {
+  @include mn-desktop {
+    padding: calc(2rem + 2%) 2rem;
+  }
+}
+
+.mobile\:section-pad {
+  @include mx-desktop {
+    padding: calc(1rem + 2%) 1rem;
+  }
+}
+
+/*--------------------------------------------------------------------------------
+    SIZING UTILS
+--------------------------------------------------------------------------------*/
+
+.inner-mw-ultra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > * {
+    max-width: $ultrawide-width;
+  }
+}
+
+.desktop-width {
+  max-width: $desktop-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mw-ultra {
+  max-width: $ultrawide-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wide-width {
+  max-width: $wide-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.uw-width {
+  max-width: $ultrawide-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*--------------------------------------------------------------------------------
+    VISIBILITY UTILS
+--------------------------------------------------------------------------------*/
+.phone--hidden,
+.phone\:hide {
+  @include mx-phone {
+    display: none;
+  }
+}
+
+.tablet--hidden,
+.tablet\:hide {
+  @include tablet {
+    display: none;
+  }
+}
+
+.desktop-only,
+.mobile--hidden,
+.mobile\:hide {
+  @include mx-desktop {
+    display: none;
+  }
+}
+
+.mobile-tablet-only,
+.mobile-only,
+.desktop--hidden,
+.desktop\:hide {
+  @include mn-desktop {
+    display: none !important;
+  }
+}
+
+/*--------------------------------------------------------------------------------
+    IMAGE UTILS
+--------------------------------------------------------------------------------*/
+
+.image--cover {
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    line-height: 0;
+  }
+}
+
+/*--------------------------------------------------------------------------------
+    FLEX UTILS
+--------------------------------------------------------------------------------*/
+.block {
+  display: block;
+}
+.fx-col {
+  display: flex;
+  flex-direction: column;
+}
+.fx-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.fx-row-rev {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.fx-wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+.fx-wrap-rev {
+  display: flex;
+  flex-flow: row-reverse wrap;
+}
+.fx-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+.center-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+.desk\:fx-col {
+  @include mn-desktop {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.desk\:fx-row {
+  @include mn-desktop {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.desk\:fx-col-center {
+  @include mn-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.desk\:center {
+  @include mn-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    > * {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+.mobile\:center-all {
+  @include mx-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    * {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+.mobile\:fx-col {
+  @include mx-desktop {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.mobile\:fx-col-reverse {
+  @include mx-desktop {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.desk\:block {
+  @include mn-desktop {
+    display: block;
+  }
+}
+
+.tablet\:fx-row {
+  @include mn-tablet {
+    display: flex;
+    flex-direction: row;
+  }
+}
+/*--------------------------------------------------------------------------------
+
+  GAP UTILS -- new gutter method
+
+--------------------------------------------------------------------------------*/
+.gp-0\.25 {
+  display: flex;
+  gap: 0.25rem;
+}
+.gp-0\.5 {
+  display: flex;
+  gap: 0.5rem;
+}
+.gp-0\.75 {
+  display: flex;
+  gap: 0.75rem;
+}
+.gp-1 {
+  display: flex;
+  gap: 1rem;
+}
+.gp-1\.25 {
+  display: flex;
+  gap: 1.25rem;
+}
+.gp-1\.5 {
+  display: flex;
+  gap: 1.5rem;
+}
+.gp-1\.75 {
+  display: flex;
+  gap: 1.75rem;
+}
+.gp-2 {
+  display: flex;
+  gap: 2rem;
+}
+
+/*--------------------------------------------------------------------------------
+    GUTTER UTILS -- old school method
+    proper insulation of negative margin requires a wrapper above the 
+    element with the gutter class
+--------------------------------------------------------------------------------*/
+.gt-0\.25 {
+  $gutter: 0.25rem;
+  margin: calc(#{$gutter} / 2 * -1);
+  > * {
+    margin: calc(#{$gutter} / 2);
+  }
+}
+.gt-0\.5 {
+  $gutter: 0.5rem;
+  margin: calc(#{$gutter} / 2 * -1);
+  > * {
+    margin: calc(#{$gutter} / 2);
+  }
+}
+.gt-1 {
+  $gutter: 1rem;
+  margin: calc(#{$gutter} / 2 * -1);
+  > * {
+    margin: calc(#{$gutter} / 2);
+  }
+}
+
+.gt-2 {
+  $gutter: 2rem;
+  margin: calc(#{$gutter} / 2 * -1);
+  > * {
+    margin: calc(#{$gutter} / 2);
+  }
+}
+
+/*
+flex: grow  shrink || basis
+*/
+.col-10 {
+  flex-grow: 1;
+}
+.col-20 {
+  flex-grow: 2;
+}
+.col-40 {
+  flex-grow: 4;
+  flex-basis: auto;
+}
+.col-60 {
+  flex-grow: 6;
+  min-width: 60%;
+}
+.col-80 {
+  flex-grow: 8;
+  min-width: 80%;
+}
+
+.two-col-content {
+  column-count: 2;
+  column-gap: 3rem;
+  column-width: 50ch;
+  max-width: 1400px;
+  padding: 2rem 0;
+  .column-group {
+    break-inside: avoid;
+  }
+  // %headings {
+  //   margin: 0;
+  // }
+  > div + div {
+    margin-top: 2rem;
+  }
+  p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

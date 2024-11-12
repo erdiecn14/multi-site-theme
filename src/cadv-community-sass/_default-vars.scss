@@ -1,0 +1,11 @@
+$url-base:'';
+$dir-uploads: '/wp-content/uploads';
+$url-media: '#{$url-base}#{$dir-uploads}';
+
+@import 'default-vars/animation-vars';
+@import 'default-vars/color-vars';
+@import 'default-vars/device-vars';
+@import 'default-vars/font-vars';
+@import 'default-vars/layout-vars';
+@import 'default-vars/slick-vars.scss';
+@import 'default-vars/password-vars.scss';

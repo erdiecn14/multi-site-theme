@@ -1,0 +1,255 @@
+@mixin gform-unmargin {
+  @at-root .gform_wrapper {
+    margin-bottom: 0 !important;
+  }
+  @at-root .gform_wrapper & {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  @at-root .gform_wrapper & .gform_heading {
+    margin-bottom: 0;
+  }
+  @at-root .gform_wrapper & .gform_description {
+    margin-bottom: 0;
+  }
+  @at-root .gform_wrapper & li.hidden_label input {
+    margin-top: 0;
+  }
+  @at-root .gform_wrapper & .top_label div.ginput_container {
+    margin-top: 0;
+  }
+  @at-root .gform_wrapper & .gform_footer input[type="submit"] {
+    margin: 0;
+  }
+  .gform_footer.top_label {
+    margin-top: 0;
+  }
+  .ginput_container_select {
+    margin-top: 0 !important;
+  }
+}
+
+@mixin gform-wireframe($bg-color, $wire-color, $wire-width, $radius, $txt-color, $btn-color, $cta-color, $btn-position: center) {
+  text-align: center;
+  font-family: $button-font;
+  @at-root .gform_wrapper & label.gfield_label {
+    text-transform: uppercase;
+    font-family: $button-font;
+    font-weight: $body-copy-font-weight;
+    letter-spacing: $heading-sm-letter-spacing;
+  }
+
+  input:not([type="submit"]),
+  & textarea {
+    background: $bg-color;
+    border: solid $wire-width $wire-color;
+    border-radius: $radius;
+    color: $txt-color;
+    border: 1px solid $color-1;
+    @include rfs($font-size-sm!important);
+    // IE SUPPORT - don't use em units for height or padding!
+    height: 1%;
+    padding: 30px !important;
+    font-weight: $font-weight-bold;
+    &:focus {
+      outline: none;
+      border: solid $wire-width $color-1;
+    }
+  }
+  select {
+    border: 1px solid $color-1;
+    padding: 20px 15px 15px 20px !important;
+    color: $txt-color;
+    font-family: $heading-sm-font !important;
+    @include rfs($font-size-sm!important);
+    font-weight: $heading-sm-font-weight !important;
+    text-transform: uppercase;
+    letter-spacing: $heading-sm-letter-spacing !important;
+    option {
+      letter-spacing: $heading-sm-letter-spacing;
+      text-transform: none !important;
+    }
+    // @include mx-tablet {
+    //   height: 80px;
+    //   white-space: normal;
+    // }
+  }
+  :-ms-input-placeholder {
+    color: $txt-color;
+    @include rfs($font-size-med);
+    font-weight: $heading-sm-font-weight;
+    font-family: $heading-sm-font;
+    text-transform: $heading-sm-transform;
+    letter-spacing: $heading-sm-letter-spacing;
+  }
+  ::placeholder {
+    color: $txt-color;
+    @include rfs($font-size-sm);
+    font-weight: $heading-sm-font-weight;
+    font-family: $heading-sm-font;
+    text-transform: $heading-sm-transform;
+    letter-spacing: $heading-sm-letter-spacing;
+  }
+  .gform_footer {
+    text-align: $btn-position;
+    @include mx-desktop {
+      text-align: center;
+    }
+    @include mn-desktop {
+      padding-right: 2rem !important;
+    }
+    &:after {
+      margin-left: 7px;
+      content: ">";
+      color: $cta-color;
+      font-weight: $font-weight-bold;
+    }
+    input[type="submit"] {
+      @extend %button-animate;
+      @include rfs($font-size-med);
+      background: $btn-color;
+      border-radius: 0;
+      // box-shadow: 0 0 11px 1px rgba(0,0,0,.5);
+      border: none;
+      color: $cta-color;
+      cursor: pointer;
+      font-family: $button-font;
+      font-weight: $heading-sm-font-weight !important;
+      // change from em units to support IE
+      // padding: 1.2em 3em;
+      padding: 0 !important;
+      text-transform: uppercase;
+      letter-spacing: $cta-letter-spacing;
+      &:focus {
+        outline: 1px solid $color-3;
+      }
+
+      // transition: ease-in-out .2s;
+      // dropping mobile em styling to support IE, same % works fine on mobile.
+      // @include mx-phone {
+      //     padding: .7em 1em;
+      // }
+
+      // &:hover {
+      //     transform: scale(1.05);
+      // }
+    }
+  }
+}
+
+@mixin gform-dropdown($bg-color, $wire-color, $wire-width, $radius, $txt-color, $opt-color, $highlight-color) {
+  .chosen-container {
+    background: $bg-color;
+    border: solid $wire-width $wire-color;
+    border-radius: $radius;
+    // this needs to be tweaked based on the font used and whether its in caps
+    padding: 19px;
+    text-transform: none;
+  }
+
+  .gform_wrapper & a.chosen-single {
+    background: transparent !important;
+    border: none !important;
+    color: $txt-color !important;
+    @include rfs($font-size-med);
+    font-weight: normal;
+    box-shadow: none !important;
+    line-height: 1 !important;
+    height: 100% !important;
+    padding: 0;
+    @include mx-tablet {
+      span {
+        margin-bottom: 0;
+      }
+      // tweak the arrow position
+      span + div {
+        top: -8px;
+      }
+    }
+  }
+
+  .chosen-drop .chosen-search {
+    background: $bg-color;
+  }
+
+  .chosen-drop .chose-search .chosen-search-input {
+    border: solid 1px $wire-color;
+  }
+
+  ul.chosen-results {
+    @include rfs($font-size-lg);
+    color: $opt-color !important;
+    background: $bg-color;
+  }
+
+  ul.chosen-results li.highlighted {
+    background-image: none !important;
+    background: $highlight-color !important;
+  }
+}
+
+@mixin gform-checkbox($box-size, $border-color, $border-width, $box-bg, $check-color) {
+  .ginput_container_checkbox,
+  .ginput_container_radio {
+    padding-left: 1em;
+  }
+  .gform_wrapper & ul.gfield_checkbox,
+  .gform_wrapper & ul.gfield_radio {
+    li {
+      overflow: visible;
+      display: flex;
+      justify-content: flex-start;
+    }
+    input {
+      // margin-bottom: 1em;
+      margin-left: 0.2em;
+      & + label {
+        margin-left: 0.75 * $box-size;
+        font-family: $font-stack-sans;
+        text-transform: uppercase;
+      }
+      & + label:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 15;
+        width: $box-size;
+        height: $box-size;
+        border: solid $border-width $border-color;
+        top: 0;
+        left: 0;
+        background-color: $box-bg;
+      }
+      & + label:after:hover {
+        cursor: pointer;
+      }
+      &:checked + label:before {
+        font-family: $body-copy-font;
+        content: "X";
+        color: $check-color;
+        display: block;
+        position: absolute;
+        z-index: 20;
+        font-size: 1.5rem;
+        left: 0.25em;
+        top: -0.25em;
+      }
+      &:disabled {
+        & + label:after {
+          background-color: #e1e1e1;
+          border: solid 1px transparent;
+          &:hover {
+            cursor: default;
+          }
+        }
+        & + label {
+          color: #afafaf;
+          font-style: italic;
+          &:hover {
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+}

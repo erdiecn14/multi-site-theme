@@ -1,0 +1,63 @@
+// Single Blog page code //
+
+$flow-space: 5rem;
+
+.single-content {
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: calc(1.1rem + 2.4vw);
+    
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 0;
+    margin: 0;
+    margin-top: 2ex;
+    text-transform: initial;
+  }
+  %non-heading-copy {
+    margin: 1em 0;
+  }
+
+  h1 strong,
+  h2 strong,
+  h3 strong,
+  h4 strong,
+  h5 strong,
+  h6 strong {
+    font-size: inherit;
+  }
+
+
+  p,
+  ul,
+  ol {
+    @extend %non-heading-copy;
+  }
+
+  %headings + %headings {
+    margin-top: 2ex;
+  }
+
+  %headings + %non-heading-copy {
+    margin-top: 1ex;
+  }
+
+  ul,
+  ol {
+    list-style-type: initial;
+    margin-left: 2rem;
+    li {
+      line-height: 1;
+    }
+    & + p {
+      margin-top: 1.3ex;
+    }
+  }
+}

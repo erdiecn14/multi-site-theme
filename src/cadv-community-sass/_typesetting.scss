@@ -1,0 +1,236 @@
+%txt-md {
+  @include rfs($font-size-med);
+}
+%txt-lg {
+  @include rfs($font-size-lg);
+}
+%txt-xl {
+  @include rfs($font-size-xl);
+}
+%txt-xxl {
+  @include rfs($font-size-xxl);
+}
+%txt-xxxl {
+  @include rfs($font-size-xxxl);
+}
+%txt-huge {
+  @include rfs($font-size-huge);
+}
+%txt-sm {
+  font-size: $font-size-sm;
+}
+%txt-xs {
+  font-size: $font-size-xs;
+}
+%txt-xxs {
+  font-size: $font-size-xxs;
+}
+
+%h1-size {
+  @include rfs($h1-font-size);
+}
+%h2-size {
+  @include rfs($h2-font-size);
+}
+%h3-size {
+  @include rfs($h3-font-size);
+}
+%h4-size {
+  @include rfs($h4-font-size);
+}
+%h5-size {
+  @include rfs($h5-font-size);
+}
+%h6-size {
+  @include rfs($h6-font-size);
+}
+%p-size {
+  @include rfs($body-font-size);
+}
+
+/*		
+		for responsive font-sizing use rfs
+
+		.title {
+			@include responsive-font-size(4rem); // OR @include responsive-font-size(64px); OR @include rfs(64);
+		}
+
+*/
+
+%headings {
+  color: inherit;
+  font-family: $heading-font;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  letter-spacing: $heading-letter-spacing;
+  text-transform: $heading-transform;
+  margin-top: 0;
+  // margin-bottom: 0;
+  // & + * {
+  //   margin-top: $hd-bottom-gap;
+  // }
+  // & + p {
+  //   margin-top: $hd-p-gap;
+  // }
+  // & + ul {
+  //   margin-top: $hd-ls-gap;
+  // }
+  // & + ol {
+  //   margin-top: $hd-ls-gap;
+  // }
+  margin-bottom: $hd-bottom-gap;
+}
+
+%headings:last-child {
+  margin-bottom: 0;
+}
+
+%headings-sm {
+  color: inherit;
+  font-family: $heading-sm-font;
+  font-weight: $heading-sm-font-weight;
+  font-size: $heading-sm-font-size;
+  line-height: $heading-sm-line-height;
+  letter-spacing: $heading-sm-letter-spacing;
+  text-transform: $heading-sm-transform;
+  & + * {
+    margin-top: $hdsm-bottom-gap;
+  }
+  & + p {
+    margin-top: $hdsm-p-gap;
+  }
+  & + ul {
+    margin-top: $hdsm-ls-gap;
+  }
+  & + ol {
+    margin-top: $hdsm-ls-gap;
+  }
+}
+
+//--headings
+h1 {
+  @include rfs($h1-font-size);
+}
+h2 {
+  @include rfs($h2-font-size);
+}
+h3 {
+  @include rfs($h3-font-size);
+}
+h4 {
+  @include rfs($h4-font-size);
+}
+h5 {
+  @include rfs($h5-font-size);
+}
+h6 {
+  @include rfs($h6-font-size);
+}
+
+//--body copy and links
+p {
+  @include rfs($body-font-size);
+  font-family: $body-font;
+  font-weight: $body-font-weight;
+  color: $font-color;
+  max-width: $body-max-width;
+  // min-width: $body-min-width;
+  line-height: $p-line-height;
+  margin: 0;
+
+  & + p {
+    margin-top: $p-p-gap;
+  }
+}
+
+p + %headings {
+  margin-top: 2em;
+}
+
+header p {
+  font-family: $heading-sm-font;
+  font-weight: $heading-sm-font-weight;
+  font-size: 1.25rem;
+  text-transform: $heading-sm-transform;
+  line-height: $heading-sm-line-height;
+  letter-spacing: $heading-sm-letter-spacing;
+}
+
+a {
+  font-family: $body-font;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  @at-root p & {
+    color: $body-link-color;
+  }
+}
+
+.tagline {
+  font-family: $tagline-font;
+  text-transform: uppercase;
+}
+
+/* %headings = h1 - h6 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %headings !optional;
+}
+
+/* emphasized headings are in script font 
+		-- color is not affected as it is determined by the strong tag */
+%headings strong {
+  font-family: $heading-strong-font;
+  font-size: $heading-strong-font-size;
+  font-weight: $heading-strong-font-weight;
+  text-transform: $heading-strong-transform;
+}
+
+%headings em {
+  font-family: $heading-em-font;
+  font-size: $heading-em-font-size;
+  font-weight: $heading-em-font-weight;
+  text-transform: $heading-em-transform;
+}
+
+main ul,
+main ol {
+  font-family: $body-font;
+  font-size: $ls-font-size;
+  padding: $ls-padding;
+  font-weight: $ls-font-weight;
+  margin: 0;
+  li + li {
+    margin-top: $ls-li-gap;
+  }
+  li {
+    line-height: $ls-line-height;
+    font-weight: $ls-font-weight;
+    // color: $font-color;
+  }
+  li::marker {
+    color: $ls-marker-color;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+// Added for CA theme
+
+// %headings {
+//   margin-top: 0;
+//   margin-bottom: 0;
+// }
+
+// h2{
+//   font-size: 3rem;
+//   line-height: 1.25;
+// }
