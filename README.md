@@ -2,7 +2,7 @@
 
 # multi_site_theme
 
-## Summary
+### Summary
 
 #### multi_site_theme was developed for Catalyst Marketing and is their proprietary theme.
 This theme was designed to be a scalable WordPress solution used across 20+ sites. It maintains a consistent front-end design across all sites while allowing for flexible branding and content updates. Content updates are managed in WordPress using responsive components built with Advanced Custom Fields Pro (ACF), while branding adjustments are made through global ACF fields and an untracked main.scss file. Version-controlled theme updates are managed with Git and deployed across all sites using GitHub Actions.
