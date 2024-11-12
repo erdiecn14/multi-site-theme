@@ -25,11 +25,11 @@ $ composer install
 $ npm install
 ```
 
-## Organization
+<!-- ## Organization
 
 ## Front End
 
-All front end development files are in src/.
+All front end development files are in src/. -->
 
 ### Available CLI commands
 
